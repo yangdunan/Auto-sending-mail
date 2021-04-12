@@ -1,6 +1,10 @@
-# Auto-sending-mail
+# Auto sending mail
 
-
-  python3 send_mail.py
-  
-  
+## How to run
+```
+make
+```
++ Input:
+    example.csv
++ Output:
+    None

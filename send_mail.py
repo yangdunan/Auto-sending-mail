@@ -12,14 +12,13 @@ gmail_password = '123456789'
 from_address = gmail_user
   
 #設定信件內容與收件人資訊
-df_CH4_score = pd.read_csv('./ch4_part2/CH4_part2_score.csv')  
-# df_PA3_score = pd.read_csv('./pa3/PA3_score.csv')  
-df_CH4_score = df_CH4_score.dropna(axis=0,how='all')  
-# df_PA3_score = df_PA3_score.dropna(axis=0,how='all')  
-for index in range(len(df_CH4_score))[15:16]:
-    # print (df_CH4_score["email"][index])
-    to_address = "juliany922@gmail.com"  
+df_score = pd.read_csv('./example.csv')  
+df_score = df_score.dropna(axis=0,how='all')  
+for index in range(len(df_score)):
+    to_address = df_score["email"][index]
+    # 標題
     Subject = "計算機結構CH4_part2成績"
+    # 內容
     contents = "\
     {} 同學好, \n \
     計算機結構CH4_part2總成績 : {} \n \
@@ -42,9 +41,9 @@ for index in range(len(df_CH4_score))[15:16]:
     Please contact TA if you have any question about your score. \n \
     Thank you \n \
     \n \
-    TA 楊惇安 \n ".format(df_CH4_score["Name"][index],df_CH4_score["total"][index],df_CH4_score["1.1"][index],df_CH4_score["1.2"][index],df_CH4_score["2.1"][index]
-    ,df_CH4_score["2.2"][index],df_CH4_score["2.3"][index],df_CH4_score["Name"][index],df_CH4_score["total"][index],df_CH4_score["1.1"][index],df_CH4_score["1.2"][index],df_CH4_score["2.1"][index]
-    ,df_CH4_score["2.2"][index],df_CH4_score["2.3"][index])
+    TA 楊惇安 \n ".format(df_score["Name"][index],df_score["total"][index],df_score["1.1"][index],df_score["1.2"][index],df_score["2.1"][index]
+    ,df_score["2.2"][index],df_score["2.3"][index],df_score["Name"][index],df_score["total"][index],df_score["1.1"][index],df_score["1.2"][index],df_score["2.1"][index]
+    ,df_score["2.2"][index],df_score["2.3"][index])
 
  
     # #開始組合信件內容
