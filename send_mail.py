@@ -7,8 +7,8 @@ from email import encoders #用於附檔編碼
 import datetime
 import ssl
 #寄件者使用的Gmail帳戶資訊
-gmail_user = 'juliany922@gapp.nthu.edu.tw'
-gmail_password = 'maus0922'
+gmail_user = 'abcd@gmail.com'
+gmail_password = '123456789'
 from_address = gmail_user
   
 #設定信件內容與收件人資訊
